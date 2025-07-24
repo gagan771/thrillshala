@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 import { Users, Heart, Sparkles } from "lucide-react"
 import { Badge } from "@/components/ui/badge"

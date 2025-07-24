@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import { Calendar, Users, MapPin, CheckCircle, XCircle, Camera, ChevronLeft, ChevronRight, Heart } from "lucide-react"; // Added Heart icon
 import { Badge } from "@/components/ui/badge";
