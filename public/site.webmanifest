@@ -1,0 +1,27 @@
+{
+  "name": "Thrillshala - Adventure Tours & Travel Packages",
+  "short_name": "Thrillshala",
+  "description": "Discover incredible adventure tours and travel packages to Kashmir, Himachal Pradesh, Ladakh, Kerala, Goa, and Andaman with Thrillshala.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/logo.png", 
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["travel", "tourism", "adventure"],
+  "lang": "en",
+  "dir": "ltr"
+}

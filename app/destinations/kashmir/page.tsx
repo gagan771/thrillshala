@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { MapPin, Calendar, Users, Star, Clock } from "lucide-react"
@@ -6,6 +7,46 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+
+export const metadata: Metadata = {
+  title: "Kashmir Tour Packages - Srinagar, Gulmarg, Pahalgam | Starting ₹18,999",
+  description: "Explore paradise with our Kashmir tour packages. Visit Srinagar Dal Lake, Gulmarg skiing, Pahalgam valleys, and Kashmir Great Lakes Trek. Customized honeymoon and family packages from ₹18,999. Book now!",
+  keywords: [
+    "Kashmir tour packages",
+    "Srinagar Gulmarg Pahalgam package",
+    "Kashmir honeymoon packages", 
+    "Kashmir Great Lakes trek",
+    "Dal Lake houseboat",
+    "Gulmarg gondola",
+    "Kashmir valley tour",
+    "Sonamarg packages",
+    "Kashmir family tours",
+    "best Kashmir packages",
+    "Kashmir trip cost",
+    "Kashmir tourism packages"
+  ],
+  openGraph: {
+    title: "Kashmir Tour Packages - Paradise on Earth | Thrillshala",
+    description: "Discover the breathtaking beauty of Kashmir with our customized tour packages. Dal Lake, Gulmarg, Pahalgam, and more starting from ₹18,999.",
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1605640840605-14ac1855827b?q=80&w=1200",
+        width: 1200,
+        height: 630,
+        alt: "Beautiful Kashmir valley with snow-capped mountains and Dal Lake",
+      },
+    ],
+    url: "https://thrillshala.com/destinations/kashmir",
+  },
+  twitter: {
+    title: "Kashmir Tour Packages - Paradise on Earth | Thrillshala", 
+    description: "Discover the breathtaking beauty of Kashmir with our customized tour packages. Dal Lake, Gulmarg, Pahalgam, and more starting from ₹18,999.",
+    images: ["https://images.unsplash.com/photo-1605640840605-14ac1855827b?q=80&w=1200"],
+  },
+  alternates: {
+    canonical: "https://thrillshala.com/destinations/kashmir",
+  },
+}
 
 export default function KashmirDestinationPage() {
   const kashmirPackages = [

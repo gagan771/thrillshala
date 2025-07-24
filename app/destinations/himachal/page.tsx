@@ -1,9 +1,50 @@
+import type { Metadata } from "next"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { BookingButton } from "@/components/booking-button"
+
+export const metadata: Metadata = {
+  title: "Himachal Pradesh Tour Packages - Shimla, Manali, Dharamshala | Best Prices",
+  description: "Explore the beautiful hills of Himachal Pradesh with our customized tour packages. Visit Shimla, Manali, Dharamshala, Spiti Valley, and more. Mountain adventures, honeymoon packages, and family tours starting from ₹15,999.",
+  keywords: [
+    "Himachal Pradesh tour packages",
+    "Shimla Manali packages",
+    "Dharamshala tours",
+    "Spiti Valley expedition",
+    "Himachal honeymoon packages",
+    "Kullu Manali tour",
+    "Himachal trekking packages",
+    "Dalhousie tour packages",
+    "McLeod Ganj tours",
+    "Himachal family packages",
+    "best Himachal packages",
+    "mountain tours Himachal"
+  ],
+  openGraph: {
+    title: "Himachal Pradesh Tour Packages - Mountain Paradise | Thrillshala",
+    description: "Discover the scenic beauty of Himachal Pradesh with our expert-crafted tour packages. Shimla, Manali, Dharamshala and more starting from ₹15,999.",
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200",
+        width: 1200,
+        height: 630,
+        alt: "Beautiful Himachal Pradesh mountains and valleys",
+      },
+    ],
+    url: "https://thrillshala.com/destinations/himachal",
+  },
+  twitter: {
+    title: "Himachal Pradesh Tour Packages - Mountain Paradise | Thrillshala",
+    description: "Discover the scenic beauty of Himachal Pradesh with our expert-crafted tour packages. Shimla, Manali, Dharamshala and more starting from ₹15,999.",
+    images: ["https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200"],
+  },
+  alternates: {
+    canonical: "https://thrillshala.com/destinations/himachal",
+  },
+}
 
 export default function HimachalPage() {
   return (

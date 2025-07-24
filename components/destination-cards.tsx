@@ -7,6 +7,14 @@ import React, { useRef } from "react"
 
 const domesticDestinations = [
   {
+    name: "Kashmir",
+    subtitle: "Paradise",
+    image:
+      "https://images.unsplash.com/photo-1605640840605-14ac1855827b?q=80&w=2126&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    link: "/destinations/kashmir",
+    bgColor: "from-blue-400 to-blue-600",
+  },
+  {
     name: "Ladakh",
     subtitle: "Road Trip",
     image:
@@ -46,14 +54,7 @@ const domesticDestinations = [
     link: "/destinations/andaman",
     bgColor: "from-blue-800 to-blue-900",
   },
-  {
-    name: "Kashmir",
-    subtitle: "Paradise",
-    image:
-      "https://images.unsplash.com/photo-1605640840605-14ac1855827b?q=80&w=2126&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "/destinations/kashmir",
-    bgColor: "from-blue-400 to-blue-600",
-  },
+  
 ]
 
 const tourPackages = [

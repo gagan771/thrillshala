@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Image from "next/image"
 import { MapPin, Camera, Mountain, Star, Calendar } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
@@ -5,6 +6,46 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { BookingButton } from "@/components/booking-button"
+
+export const metadata: Metadata = {
+  title: "Ladakh Tour Packages - Leh, Pangong Lake, Nubra Valley | Adventure Tours",
+  description: "Experience the rugged beauty of Ladakh with our adventure tour packages. Visit Leh, Pangong Tso Lake, Nubra Valley, Khardung La Pass. Bike tours, trekking expeditions, and cultural tours starting from ₹25,999.",
+  keywords: [
+    "Ladakh tour packages",
+    "Leh Ladakh bike tour",
+    "Pangong Lake tour",
+    "Nubra Valley packages",
+    "Khardung La Pass",
+    "Ladakh trekking tours",
+    "Ladakh adventure packages",
+    "Magnetic Hill Ladakh",
+    "Spituk Monastery tour",
+    "Ladakh bike expedition",
+    "best Ladakh packages",
+    "Ladakh road trip"
+  ],
+  openGraph: {
+    title: "Ladakh Tour Packages - Land of High Passes | Thrillshala",
+    description: "Discover the mystical beauty of Ladakh with our adventure packages. Pangong Lake, Nubra Valley, bike tours and more starting from ₹25,999.",
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200",
+        width: 1200,
+        height: 630,
+        alt: "Breathtaking Ladakh landscapes with mountains and clear blue skies",
+      },
+    ],
+    url: "https://thrillshala.com/destinations/ladakh",
+  },
+  twitter: {
+    title: "Ladakh Tour Packages - Land of High Passes | Thrillshala",
+    description: "Discover the mystical beauty of Ladakh with our adventure packages. Pangong Lake, Nubra Valley, bike tours and more starting from ₹25,999.",
+    images: ["https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200"],
+  },
+  alternates: {
+    canonical: "https://thrillshala.com/destinations/ladakh",
+  },
+}
 
 export default function LadakhPage() {
   const attractions = [
