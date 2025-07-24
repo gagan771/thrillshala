@@ -63,8 +63,6 @@ const nextConfig = {
   },
   // Compress output
   compress: true,
-  // Generate static pages for better SEO
-  output: 'export',
   trailingSlash: false,
 }
 
