@@ -1,8 +1,9 @@
 "use client"
 
-import { ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import React, { useRef } from "react"
 
 const domesticDestinations = [
   {
@@ -150,45 +151,88 @@ function DestinationCard({ destination }: { destination: any }) {
 }
 
 export function DestinationCards() {
+  const tourPackagesRef = useRef<HTMLDivElement>(null)
+  const domesticDestinationsRef = useRef<HTMLDivElement>(null)
+
+  const slideLeft = (ref: React.RefObject<HTMLDivElement>) => {
+    if (ref.current) {
+      ref.current.scrollBy({
+        left: -300, // Adjust scroll distance as needed
+        behavior: "smooth",
+      })
+    }
+  }
+
+  const slideRight = (ref: React.RefObject<HTMLDivElement>) => {
+    if (ref.current) {
+      ref.current.scrollBy({
+        left: 300, // Adjust scroll distance as needed
+        behavior: "smooth",
+      })
+    }
+  }
+
   return (
     <div className="py-16 bg-gradient-to-br from-orange-50 to-yellow-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Featured Tour Packages - NOW FIRST */}
+        {/* Featured Tour Packages */}
         <div className="mb-16">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-800 bg-clip-text text-transparent">
               Featured Tour Packages
             </h2>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-orange-600 hover:text-orange-700 hover:bg-orange-100 rounded-full"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </Button>
+            <div className="flex items-center space-x-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-orange-600 hover:text-orange-700 hover:bg-orange-100 rounded-full"
+                onClick={() => slideLeft(tourPackagesRef)}
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-orange-600 hover:text-orange-700 hover:bg-orange-100 rounded-full"
+                onClick={() => slideRight(tourPackagesRef)}
+              >
+                <ChevronRight className="w-5 h-5" />
+              </Button>
+            </div>
           </div>
-          <div className="flex space-x-6 overflow-x-auto scrollbar-hide pb-4">
+          <div className="flex space-x-6 overflow-x-auto scrollbar-hide pb-4" ref={tourPackagesRef}>
             {tourPackages.map((destination, index) => (
               <DestinationCard key={index} destination={destination} />
             ))}
           </div>
         </div>
 
-        {/* Your Experience, Our Guarantee - NOW SECOND */}
+        {/* Your Experience, Our Guarantee */}
         <div>
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-800 bg-clip-text text-transparent">
               Your Experience, Our Guarantee
             </h2>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-orange-600 hover:text-orange-700 hover:bg-orange-100 rounded-full"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </Button>
+            <div className="flex items-center space-x-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-orange-600 hover:text-orange-700 hover:bg-orange-100 rounded-full"
+                onClick={() => slideLeft(domesticDestinationsRef)}
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-orange-600 hover:text-orange-700 hover:bg-orange-100 rounded-full"
+                onClick={() => slideRight(domesticDestinationsRef)}
+              >
+                <ChevronRight className="w-5 h-5" />
+              </Button>
+            </div>
           </div>
-          <div className="flex space-x-6 overflow-x-auto scrollbar-hide pb-4">
+          <div className="flex space-x-6 overflow-x-auto scrollbar-hide pb-4" ref={domesticDestinationsRef}>
             {domesticDestinations.map((destination, index) => (
               <DestinationCard key={index} destination={destination} />
             ))}
