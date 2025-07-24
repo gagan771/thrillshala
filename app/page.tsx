@@ -55,37 +55,119 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "Thrillshala - Adventure Tours & Travel Packages",
-            "description": "Premier destination for adventure tours and travel packages in India",
-            "url": "https://thrillshala.com",
-            "mainEntity": {
-              "@type": "TravelAgency",
-              "name": "Thrillshala",
-              "offers": [
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Thrillshala - Adventure Tours & Travel Packages",
+              "description": "Premier destination for adventure tours and travel packages in India",
+              "url": "https://thrillshala.com",
+              "mainEntity": {
+                "@type": "TravelAgency",
+                "name": "Thrillshala"
+              },
+              "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://thrillshala.com"
+                  }
+                ]
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              "name": "Popular Tour Destinations",
+              "description": "Top travel destinations offered by Thrillshala",
+              "numberOfItems": 6,
+              "itemListElement": [
                 {
-                  "@type": "TouristTrip",
-                  "name": "Kashmir Adventure Tours",
-                  "description": "Explore the paradise of Kashmir with our customized tour packages",
-                  "touristType": "Adventure Seekers"
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Kashmir Tour Packages",
+                  "url": "https://thrillshala.com/destinations/kashmir",
+                  "description": "Paradise on Earth - Dal Lake, Gulmarg, Pahalgam"
                 },
                 {
-                  "@type": "TouristTrip", 
+                  "@type": "ListItem", 
+                  "position": 2,
                   "name": "Himachal Pradesh Packages",
-                  "description": "Experience the beauty of Himachal with trekking and cultural tours",
-                  "touristType": "Mountain Enthusiasts"
+                  "url": "https://thrillshala.com/destinations/himachal",
+                  "description": "Mountain adventures in Shimla, Manali, Dharamshala"
                 },
                 {
-                  "@type": "TouristTrip",
-                  "name": "Ladakh Expeditions", 
-                  "description": "Discover the rugged beauty of Ladakh with bike tours and treks",
-                  "touristType": "Adventure Travelers"
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Ladakh Expeditions",
+                  "url": "https://thrillshala.com/destinations/ladakh",
+                  "description": "Land of High Passes - Pangong Lake, Nubra Valley"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 4,
+                  "name": "Kerala Backwaters",
+                  "url": "https://thrillshala.com/destinations/kerala",
+                  "description": "God's Own Country - Houseboats and spice gardens"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 5,
+                  "name": "Goa Beach Holidays",
+                  "url": "https://thrillshala.com/destinations/goa",
+                  "description": "Sun, sand and sea - Perfect beach getaway"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 6,
+                  "name": "Andaman Islands",
+                  "url": "https://thrillshala.com/destinations/andaman",
+                  "description": "Pristine beaches and coral reefs"
+                }
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What destinations does Thrillshala cover?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Thrillshala offers tour packages to Kashmir, Himachal Pradesh, Ladakh, Kerala, Goa, and Andaman & Nicobar Islands with customized itineraries."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is the price range for tour packages?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our tour packages start from ₹12,999 and go up to ₹99,999 depending on the destination, duration, and inclusions."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do you provide customized tour packages?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we specialize in creating customized tour packages based on your preferences, budget, and travel dates."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is included in the tour packages?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our packages typically include accommodation, meals, transportation, sightseeing, and experienced guides. Specific inclusions vary by package."
+                  }
                 }
               ]
             }
-          })
+          ])
         }}
       />
       <div className="min-h-screen">

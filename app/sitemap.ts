@@ -1,41 +1,43 @@
 import { MetadataRoute } from 'next'
 
 export const dynamic = 'force-static'
+export const revalidate = false
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://thrillshala.com'
+  const currentDate = new Date('2025-07-25')
   
-  // Static pages
-  const staticPages = [
+  // Core pages with high priority
+  const corePages = [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: currentDate,
       changeFrequency: 'daily' as const,
-      priority: 1,
+      priority: 1.0,
     },
     {
       url: `${baseUrl}/customize-tour`,
-      lastModified: new Date(),
+      lastModified: currentDate,
       changeFrequency: 'weekly' as const,
-      priority: 0.8,
+      priority: 0.9,
     },
   ]
 
-  // Destination pages
+  // Destination pages with high SEO value
   const destinations = [
-    'kashmir',
-    'himachal', 
-    'ladakh',
-    'kerala',
-    'goa',
-    'andaman'
+    { name: 'kashmir', priority: 0.95 },
+    { name: 'himachal', priority: 0.9 }, 
+    { name: 'ladakh', priority: 0.9 },
+    { name: 'kerala', priority: 0.85 },
+    { name: 'goa', priority: 0.85 },
+    { name: 'andaman', priority: 0.8 }
   ]
 
-  const destinationPages = destinations.map(destination => ({
-    url: `${baseUrl}/destinations/${destination}`,
-    lastModified: new Date(),
+  const destinationPages = destinations.map(dest => ({
+    url: `${baseUrl}/destinations/${dest.name}`,
+    lastModified: currentDate,
     changeFrequency: 'weekly' as const,
-    priority: 0.9,
+    priority: dest.priority,
   }))
 
   // Tour pages
@@ -50,31 +52,76 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const tourPages = tours.map(tour => ({
     url: `${baseUrl}/tours/${tour}`,
-    lastModified: new Date(),
+    lastModified: currentDate,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }))
 
-  // Kashmir specific packages
+  // Kashmir specific packages (high value pages)
   const kashmirPackages = [
-    'Kashmir-Family-Vacation',
+    'srinagar-gulmarg-pahalgam',
     'kashmir-great-lakes-trek',
-    'Kashmir-Group-Tour-Package',
+    'kashmir-houseboat-experience',
+    'sonamarg-thajiwas-glacier',
+    'kashmir-tulip-garden-tour',
+    'kashmir-winter-wonderland',
+    'kashmir-photography-tour',
+    'kashmir-adventure-sports',
+    'kashmir-spiritual-journey',
     'kashmir-honeymoon-special',
-    'Kashmir-Package-Escape-To-Doodhpathri',
-    'Kashmir-Pahalgam-Tour',
-    'Kashmir-Sonamarg-Gulmarg-Pahalgam-Package',
-    'Kashmir-Special-Honeymoon-Package',
-    'Kashmir-Trip',
-    'Srinagar-Gulmarg-Package'
+    'kashmir-family-package',
+    'kashmir-luxury-tour',
+    'kashmir-budget-tour',
+    'kashmir-cultural-tour',
+    'kashmir-backpacking-adventure'
   ]
 
   const kashmirPackagePages = kashmirPackages.map(pkg => ({
     url: `${baseUrl}/destinations/kashmir/${pkg}`,
-    lastModified: new Date(),
+    lastModified: currentDate,
     changeFrequency: 'monthly' as const,
-    priority: 0.7,
+    priority: 0.75,
   }))
 
-  return [...staticPages, ...destinationPages, ...tourPages, ...kashmirPackagePages]
+  // Additional important pages
+  const additionalPages = [
+    {
+      url: `${baseUrl}/about`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/testimonials`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/gallery`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
+    }
+  ]
+
+  return [
+    ...corePages, 
+    ...destinationPages, 
+    ...tourPages, 
+    ...kashmirPackagePages,
+    ...additionalPages
+  ]
 }

@@ -263,7 +263,119 @@ export default function KashmirDestinationPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "TouristDestination",
+              "name": "Kashmir",
+              "description": "Paradise on Earth - Kashmir offers breathtaking valleys, pristine lakes, snow-capped mountains, and rich cultural heritage.",
+              "url": "https://thrillshala.com/destinations/kashmir",
+              "image": "https://images.unsplash.com/photo-1605640840605-14ac1855827b?q=80&w=1200",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "34.0837",
+                "longitude": "74.7973"
+              },
+              "touristType": ["Adventure Seekers", "Honeymooners", "Families", "Nature Lovers"],
+              "includesAttraction": [
+                {
+                  "@type": "TouristAttraction",
+                  "name": "Dal Lake",
+                  "description": "Famous lake with houseboats and shikaras"
+                },
+                {
+                  "@type": "TouristAttraction", 
+                  "name": "Gulmarg",
+                  "description": "Ski resort and gondola rides"
+                },
+                {
+                  "@type": "TouristAttraction",
+                  "name": "Pahalgam",
+                  "description": "Beautiful valleys and trekking base"
+                }
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              "name": "Kashmir Tour Packages",
+              "description": "Complete list of Kashmir tour packages offered by Thrillshala",
+              "numberOfItems": 15,
+              "itemListElement": kashmirPackages.map((pkg, index) => ({
+                "@type": "ListItem",
+                "position": index + 1,
+                "item": {
+                  "@type": "TouristTrip",
+                  "name": pkg.name,
+                  "description": pkg.subtitle,
+                  "url": `https://thrillshala.com/destinations/kashmir/${pkg.id}`,
+                  "image": pkg.image,
+                  "offers": {
+                    "@type": "Offer",
+                    "price": pkg.price.replace("₹", "").replace(",", ""),
+                    "priceCurrency": "INR",
+                    "availability": "https://schema.org/InStock",
+                    "validFrom": "2025-01-01",
+                    "validThrough": "2025-12-31"
+                  },
+                  "duration": pkg.duration,
+                  "touristType": pkg.groupSize.includes("2 People") ? "Couples" : "Groups",
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": pkg.rating,
+                    "reviewCount": pkg.reviews,
+                    "bestRating": 5,
+                    "worstRating": 1
+                  }
+                }
+              }))
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is the best time to visit Kashmir?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The best time to visit Kashmir is from April to October for pleasant weather, March-April for tulip gardens, and December-February for snow activities."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What are the main attractions in Kashmir?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Main attractions include Dal Lake with houseboats, Gulmarg ski resort, Pahalgam valleys, Sonamarg meadows, and Mughal gardens in Srinagar."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How much does a Kashmir tour package cost?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Kashmir tour packages range from ₹12,999 for budget tours to ₹35,999 for luxury packages, depending on duration, accommodation, and inclusions."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is Kashmir safe for tourists?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, Kashmir is safe for tourists. We ensure safe transportation, experienced guides, and 24/7 support for all our tour packages."
+                  }
+                }
+              ]
+            }
+          ])
+        }}
+      />
+      <div className="min-h-screen bg-gray-50">
       <Navbar />
 
       {/* Hero Section */}
@@ -396,5 +508,6 @@ export default function KashmirDestinationPage() {
 
       <Footer />
     </div>
+    </>
   )
 }

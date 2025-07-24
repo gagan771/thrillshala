@@ -1,20 +1,54 @@
-# Robots.txt for Thrillshala
+# Robots.txt for Thrillshala - Adventure Tours & Travel Packages
 User-agent: *
 Allow: /
 
-# Disallow admin and private areas
+# Allow important directories
+Allow: /destinations/
+Allow: /tours/
+Allow: /customize-tour/
+Allow: /images/
+Allow: /sitemap.xml
+
+# Disallow admin, private, and development areas
 Disallow: /admin/
 Disallow: /api/
 Disallow: /_next/
 Disallow: /private/
+Disallow: /.well-known/
+Disallow: /404
+Disallow: /500
 
-# Allow important pages
-Allow: /destinations/
-Allow: /tours/
-Allow: /customize-tour/
+# Allow specific bot crawlers
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
 
-# Sitemap location
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Disallow aggressive crawlers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap locations
 Sitemap: https://thrillshala.com/sitemap.xml
+Sitemap: https://thrillshala.com/sitemap-index.xml
+
+# Host declaration (helps with canonicalization)
+Host: https://thrillshala.com
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1

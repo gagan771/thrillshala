@@ -94,38 +94,104 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "TravelAgency",
-              "name": "Thrillshala",
-              "url": "https://thrillshala.com",
-              "logo": "https://thrillshala.com/images/logo.png",
-              "description": "Premier adventure travel agency offering customized tour packages to Kashmir, Himachal Pradesh, Ladakh, Kerala, Goa, and Andaman.",
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "IN"
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "TravelAgency",
+                "name": "Thrillshala",
+                "url": "https://thrillshala.com",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://thrillshala.com/images/logo.png",
+                  "width": 200,
+                  "height": 60
+                },
+                "image": "https://thrillshala.com/images/hero.jpg",
+                "description": "Premier adventure travel agency offering customized tour packages to Kashmir, Himachal Pradesh, Ladakh, Kerala, Goa, and Andaman with 24/7 support and expert guides.",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": "IN",
+                  "addressRegion": "India"
+                },
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+91-XXXXXXXXXX",
+                  "contactType": "Customer Service",
+                  "availableLanguage": ["Hindi", "English"],
+                  "hoursAvailable": "24/7"
+                },
+                "sameAs": [
+                  "https://facebook.com/thrillshala",
+                  "https://instagram.com/thrillshala",
+                  "https://twitter.com/thrillshala",
+                  "https://linkedin.com/company/thrillshala"
+                ],
+                "serviceType": [
+                  "Adventure Tours",
+                  "Trekking Packages", 
+                  "Honeymoon Packages",
+                  "Group Tours",
+                  "Customized Travel Packages",
+                  "Family Vacation Packages",
+                  "Corporate Tours"
+                ],
+                "areaServed": [
+                  "Kashmir",
+                  "Himachal Pradesh",
+                  "Ladakh",
+                  "Kerala",
+                  "Goa",
+                  "Andaman and Nicobar Islands"
+                ],
+                "priceRange": "₹12,999 - ₹99,999",
+                "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer", "UPI"],
+                "currenciesAccepted": "INR",
+                "foundingDate": "2020",
+                "slogan": "Adventure Awaits, Memories Last Forever"
               },
-              "sameAs": [
-                "https://facebook.com/thrillshala",
-                "https://instagram.com/thrillshala",
-                "https://twitter.com/thrillshala"
-              ],
-              "serviceType": [
-                "Adventure Tours",
-                "Trekking Packages",
-                "Honeymoon Packages",
-                "Group Tours",
-                "Customized Travel Packages"
-              ],
-              "areaServed": [
-                "Kashmir",
-                "Himachal Pradesh",
-                "Ladakh",
-                "Kerala",
-                "Goa",
-                "Andaman and Nicobar Islands"
-              ]
-            })
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "Thrillshala",
+                "alternateName": "Thrillshala Adventure Tours",
+                "url": "https://thrillshala.com",
+                "logo": "https://thrillshala.com/images/logo.png",
+                "foundingDate": "2020",
+                "founders": [
+                  {
+                    "@type": "Person",
+                    "name": "Travel Team"
+                  }
+                ],
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": "IN"
+                },
+                "contactPoint": [
+                  {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-XXXXXXXXXX",
+                    "contactType": "customer service"
+                  }
+                ]
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Thrillshala",
+                "url": "https://thrillshala.com",
+                "description": "Adventure Tours and Travel Packages",
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "Thrillshala"
+                },
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": "https://thrillshala.com/search?q={search_term_string}",
+                  "query-input": "required name=search_term_string"
+                }
+              }
+            ])
           }}
         />
       </head>

@@ -8,11 +8,14 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
-    domains: [
-      'images.unsplash.com',
-      'thrillshala.com'
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
-    formats: ['image/webp', 'image/avif'],
   },
   async headers() {
     return [
@@ -31,38 +34,10 @@ const nextConfig = {
             key: 'X-XSS-Protection',
             value: '1; mode=block',
           },
-          {
-            key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin',
-          },
-        ],
-      },
-      {
-        source: '/images/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
         ],
       },
     ]
   },
-  async redirects() {
-    return [
-      {
-        source: '/home',
-        destination: '/',
-        permanent: true,
-      },
-    ]
-  },
-  // Enable experimental features for better SEO
-  experimental: {
-    optimizeCss: true,
-  },
-  // Compress output
-  compress: true,
   trailingSlash: false,
 }
 
