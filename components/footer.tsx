@@ -117,18 +117,17 @@ export function Footer() {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-orange-500 mt-0.5 flex-shrink-0" />
                 <p className="text-gray-600 text-sm">
-                  123 Adventure Street,
-                  <br />
-                  Travel District, Mumbai 400001
+               
+                Shayam Nagar Dharamshala 176215, Himachal Pradesh, India
                 </p>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-orange-500 flex-shrink-0" />
-                <p className="text-gray-600 text-sm">+91 98765 43210</p>
+                <p className="text-gray-600 text-sm">+919816198969</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-orange-500 flex-shrink-0" />
-                <p className="text-gray-600 text-sm">hello@thrillshala.com</p>
+                <p className="text-gray-600 text-sm"></p>
               </div>
             </div>
           </div>
